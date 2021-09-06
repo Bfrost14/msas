@@ -1,0 +1,211 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #1a1f36;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Ubuntu, sans-serif;
+}
+
+body {
+    min-height: 100%;
+    background-color: #ffffff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffff;
+    padding: 5px 5px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-center {
+    float: center;
+    position: relative;
+    top: 15px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: rgb(6, 252, 6);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 14px;
+    padding: 15px 32px
+}
+
+button[type="submit"]:hover {
+    background-color: cornflowerblue;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+th {
+    background: rgb(0, 255, 34);
+    color: white;
+    font-weight: bold;
+}
+
+td,
+th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #ccc;
+    }
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    td:nth-of-type(1):before {
+        content: "Nom";
+    }
+    td:nth-of-type(2):before {
+        content: "Prénom";
+    }
+    td:nth-of-type(3):before {
+        content: "Naissance";
+    }
+    td:nth-of-type(4):before {
+        content: "Code";
+    }
+}
+
+input {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 8px 16px;
+    width: 100%;
+    display: flex;
+    min-height: 44px;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+.form-rigth {
+    display: flex;
+    align-items: flex-end;
+}
+
+.contai {
+    box-sizing: border-box;
+    width: 1024px;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.in {
+    margin: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    margin: 10px 70px 20px;
+}
+
+.tete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    margin: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+    .form {
+        width: auto;
+    }
+    .contai {
+        width: auto;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .text {
+        font-size: 20px;
+    }
+}
+
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+
+@media screen and (max-width: 600px) {
+    .text {
+        font-size: 10px;
+    }
+}
