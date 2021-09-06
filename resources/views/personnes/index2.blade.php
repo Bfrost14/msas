@@ -32,16 +32,12 @@
                   </tr>
                 </thead>
                 <tbody>
-
-                    @foreach($personnes as $personne)
-                        <tr>
-                            <td>{{ $personne->nom }}</td>
-                            <td>{{ $personne->prenom }}</td>
-                            <td>{{ $personne->dateNaiss }}</td>
-                            <td>{{ $personne->codeAlpha }}</td>
-                        </tr>
-                    @endforeach
-
+                    <tr>
+                        <td>Nothing</td>
+                        <td>Nothing</td>
+                        <td>Nothing</td>
+                        <td>Nothing</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

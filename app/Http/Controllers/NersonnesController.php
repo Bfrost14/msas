@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Personne;
-use App\Models\Nersonne;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class PersonnesController extends Controller
+class NersonnesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +13,7 @@ class PersonnesController extends Controller
      */
     public function index()
     {
-
-        $search = request()->query('search');
-        if ($search != '') {
-            $personnes = Personne::where('codeAlpha', 'LIKE', '%'.$search.'%')->get();
-            return view('personnes.index', compact('personnes'));
-        }
-
-        return view('personnes.index2');
+        //
     }
 
     /**
@@ -42,33 +32,29 @@ class PersonnesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Personne  $personne
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Personne $personnes , Request $request)
+    public function show($id)
     {
-
+        //
     }
-    public function recherche(Request $request){
 
-
-    }
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Personne  $personne
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personne $personne)
+    public function edit($id)
     {
         //
     }
@@ -77,10 +63,10 @@ class PersonnesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Personne  $personne
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Personne $personne)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -88,10 +74,10 @@ class PersonnesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Personne  $personne
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Personne $personne)
+    public function destroy($id)
     {
         //
     }
