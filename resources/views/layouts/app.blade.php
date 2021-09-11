@@ -16,9 +16,23 @@
     <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 
 <body>
+    <header class="header">
+        <nav class="navbar">
+            @if(auth()->user()->role != 'user')
+                <a href="{{ url('admin') }}">@lang('Administration')</a>
+            @endif
+            
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-power-off"></i>Deconnexion</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+                
+        </nav>
+    </header>
     <div class="contai">
         <div class="tete">
             <nav style="margin: 10px 30px 20px;">
@@ -26,6 +40,8 @@
                     <img src="{{ asset('images/banner.png') }}" width="100%" height="10%">
                 </div>
             </nav>
+
+        
         </div>
         <div class="form" style="margin: 10px 50px 20px;  box-shadow: 2px 2px 2px 2px #888888;">
             @yield('content')
@@ -34,9 +50,9 @@
             @yield('modal')
         </div>
         <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="{{ asset('js/popper.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+        <script src="{{ asset('js/popper.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 
